@@ -16,8 +16,7 @@ A aplicação permite o upload de um documento, que é armazenado no Azure Blob 
 
 ## 🤖 Tecnologias Utilizadas
 
-*   **Backend**: Python, Flask
-*   **Frontend**: HTML, CSS (Bootstrap)
+*   **Data-app**: Python, Streamlit
 *   **Cloud**:
     *   Azure AI Document Intelligence
     *   Azure Blob Storage
@@ -42,56 +41,42 @@ A aplicação permite o upload de um documento, que é armazenado no Azure Blob 
 git clone https://github.com/GilliardF/DIO_Document_Anti_Fraude.git
 cd DIO_Document_Anti_Fraude
 ```
-  
 
 2. Crie e Ative um Ambiente Virtual
-code Bash
-
     
 # Para Windows
 python -m venv venv
 venv\Scripts\activate
 
 # Para macOS/Linux
+```
 python3 -m venv venv
 source venv/bin/activate
-
-  
+```
 
 3. Instale as Dependências
-code Bash
-
-    
+```    
 pip install -r requirements.txt
-
+```
   
-
 4. Configure as Variáveis de Ambiente
-
 Crie um arquivo chamado .env na raiz do projeto e preencha com as suas credenciais do Azure:
-code Env
-
-    
+```
 ENDPOINT="SEU_ENDPOINT_DO_DOCUMENT_INTELLIGENCE"
 SUBSCRIPTION_KEY="SUA_CHAVE_DO_DOCUMENT_INTELLIGENCE"
 AZURE_STORAGE_CONNECTION_STRING="SUA_CONNECTION_STRING_DO_BLOB_STORAGE"
 CONTAINER_NAME="NOME_DO_SEU_CONTAINER_DE_BLOB"
-
-  
+```
 
 5. Execute a Aplicação
-code Bash
-
-    
-flask run
-
-  
-
+```
+cd src
+streamlit run app.py
+```
 Acesse a aplicação em http://127.0.0.1:5000 no seu navegador.
-📁 Estrutura do Projeto
-code Code
 
-    
+📁 Estrutura do Projeto
+```  
 .
 ├── src/
 │   ├── services/             # Módulos para interagir com serviços externos (Azure)
@@ -106,5 +91,4 @@ code Code
 ├── .gitignore
 ├── requirements.txt          # Dependências do projeto
 └── README.md                 # Este arquivo
-
-  
+```  
