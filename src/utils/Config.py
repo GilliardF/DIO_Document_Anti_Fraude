@@ -1,6 +1,7 @@
 import os 
-from dotenv import load_env
-load_env()
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class Config:
     ENDPOINT=os.getenv("ENDPOINT")
